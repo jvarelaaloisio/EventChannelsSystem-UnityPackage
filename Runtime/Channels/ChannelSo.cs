@@ -13,21 +13,21 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T> handler)
 		{
 			dataEvent -= handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}");
+				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent(T data)
 		{
 			dataEvent?.Invoke(data);
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen with data {data}");
+				Debug.Log($"{name}: Event risen with data {data}", this);
 		}
 	}
 
@@ -40,21 +40,21 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T1, T2> handler)
 		{
 			dataEvent -= handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}");
+				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent(T1 data1, T2 data2)
 		{
 			dataEvent?.Invoke(data1, data2);
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen with data {data1}, {data2}");
+				Debug.Log($"{name}: Event risen with data {data1}, {data2}", this);
 		}
 	}
 
@@ -67,21 +67,21 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T1, T2, T3> handler)
 		{
 			dataEvent -= handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}");
+				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent(T1 data1, T2 data2, T3 data3)
 		{
 			dataEvent?.Invoke(data1, data2, data3);
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}");
+				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}", this);
 		}
 	}
 
@@ -94,7 +94,7 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T1, T2, T3, T4> handler)
@@ -106,7 +106,7 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent?.Invoke(data1, data2, data3, data4);
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}, {data4}");
+				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}, {data4}", this);
 		}
 	}
 
@@ -119,21 +119,21 @@ namespace Events.Runtime.Channels
 		{
 			dataEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T1, T2, T3, T4, T5> handler)
 		{
 			dataEvent -= handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}");
+				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent(T1 data1, T2 data2, T3 data3, T4 data4, T5 data5)
 		{
 			dataEvent?.Invoke(data1, data2, data3, data4, data5);
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}, {data4}, {data5}");
+				Debug.Log($"{name}: Event risen with data {data1}, {data2}, {data3}, {data4}, {data5}", this);
 		}
 	}
 }

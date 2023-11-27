@@ -28,7 +28,7 @@ namespace Events.Runtime.Channels.Helpers
 			this VoidChannelSo channel,
 			in Action handler)
 		{
-			if (channel) channel.UnSubscribe(handler);
+			if (channel) channel.Unsubscribe(handler);
 			return channel;
 		}
 

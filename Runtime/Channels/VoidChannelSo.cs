@@ -14,21 +14,21 @@ namespace Events.Runtime.Channels
 		{
 			voidEvent += handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler subscribed to this channel: {handler}");
+				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
-		public void UnSubscribe(in Action handler)
+		public void Unsubscribe(in Action handler)
 		{
 			voidEvent -= handler;
 			if (config.LogSubscriptions)
-				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}");
+				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent()
 		{
 			voidEvent?.Invoke();
 			if (config.LogEventRisen)
-				Debug.Log($"{name}: Event risen.");
+				Debug.Log($"{name}: Event risen.", this);
 		}
 	}
 }
