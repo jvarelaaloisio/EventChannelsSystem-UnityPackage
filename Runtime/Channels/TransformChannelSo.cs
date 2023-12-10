@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EventChannels.Runtime.Channels;
+using UnityEngine;
 
 namespace Events.Runtime.Channels
 {

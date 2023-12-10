@@ -1,4 +1,5 @@
 ﻿using System;
+using EventChannels.Runtime.Channels;
 
 namespace Events.Runtime.Channels.Helpers
 {

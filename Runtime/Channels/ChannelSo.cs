@@ -1,31 +1,32 @@
 ﻿using System;
+using Events.Runtime.Channels;
 using UnityEngine;
 
-namespace Events.Runtime.Channels
+namespace EventChannels.Runtime.Channels
 {
 	public abstract class ChannelSo<T> : ScriptableObject
 	{
 		[SerializeField] private channelConfig config;
 		
-		private Action<T> dataEvent;
+		private Action<T> _dataEvent;
 
 		public void Subscribe(in Action<T> handler)
 		{
-			dataEvent += handler;
+			_dataEvent += handler;
 			if (config.LogSubscriptions)
 				Debug.Log($"{name}: A handler subscribed to this channel: {handler}", this);
 		}
 
 		public void Unsubscribe(in Action<T> handler)
 		{
-			dataEvent -= handler;
+			_dataEvent -= handler;
 			if (config.LogSubscriptions)
 				Debug.Log($"{name}: A handler unsubscribed from this channel: {handler}", this);
 		}
 
 		public void RaiseEvent(T data)
 		{
-			dataEvent?.Invoke(data);
+			_dataEvent?.Invoke(data);
 			if (config.LogEventRisen)
 				Debug.Log($"{name}: Event risen with data {data}", this);
 		}
