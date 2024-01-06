@@ -15,7 +15,7 @@
     "eventsystem"
   ],
   "repository": {
-    "url": "",
+    "url": "https://github.com/jvarelaaloisio/EventChannelsSystem-UnityPackage.git",
     "type": "git"
   },
   "type": "library",
